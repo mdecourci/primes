@@ -45,10 +45,10 @@ public class PrimeNumberResourceIntegrationTest {
         WebTarget target = ClientBuilder.newClient().target("http://localhost:9000/primes/calculate");
 
         Response response = target.request(javax.ws.rs.core.MediaType.APPLICATION_JSON_TYPE)
-                .post(Entity.entity(Integer.valueOf(10), javax.ws.rs.core.MediaType.TEXT_PLAIN_TYPE));
+                .post(Entity.entity(Integer.valueOf(3), javax.ws.rs.core.MediaType.TEXT_PLAIN_TYPE));
 
         assertThat(response.getStatus()).isEqualTo(200);
-        List<Long> primeNumbers = response.readEntity(new GenericType<List<Long>>(){});
+        List<Integer> primeNumbers = response.readEntity(new GenericType<List<Integer>>(){});
         assertThat(primeNumbers.size()).isEqualTo(2);
     }
 }
