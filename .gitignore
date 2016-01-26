@@ -1,0 +1,10 @@
+.git/
+.idea
+*target/
+.project
+.classpath
+.DS_Store
+log*
+*iml
+
+
